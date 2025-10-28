@@ -83,7 +83,7 @@ if (contactForm) {
         
         // Here you would typically send the data to a server
         // For now, we'll just show a success message
-        alert('Thank you for your message! I will get back to you soon.');
+        alert('Thanks! Your message was sent. I’ll reply soon.');
         
         // Reset form
         this.reset();
@@ -139,7 +139,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // Typing Animation (Hero)
 // ===========================
 
-const typingTexts = ['IT Professional', 'Software Developer', 'Systems Engineer', 'Tech Consultant'];
+// context-only change: updated roles
+const typingTexts = ['IT Helpdesk Analyst', 'Cybersecurity Enthusiast', 'Network Support Specialist', 'Tech Support Professional'];
 let currentTextIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
@@ -265,7 +266,7 @@ const downloadResumeBtn = document.querySelector('.download-resume .btn');
 if (downloadResumeBtn) {
     downloadResumeBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        alert('Resume download functionality can be implemented here.');
+        alert('Resume download is coming soon. In the meantime, see the Resume page.');
         // You would typically link to a PDF file here
         // window.open('/resume.pdf', '_blank');
     });
@@ -281,7 +282,7 @@ socialLinks.forEach(link => {
         e.preventDefault();
         // You can add actual social media links here
         const platform = this.textContent;
-        console.log(`${platform} link clicked`);
+        console.log(`${platform} link clicked (profile opens in new tab when configured).`);
     });
 });
 
@@ -289,6 +290,5 @@ socialLinks.forEach(link => {
 // Console Message
 // ===========================
 
-console.log('%cWelcome to my portfolio website!', 'color: #000; font-size: 20px; font-weight: bold;');
-console.log('%cBuilt with modern web technologies', 'color: #666; font-size: 14px;');
-
+console.log('%cAmer Blboheath — IT Helpdesk & Cybersecurity', 'color: #000; font-size: 20px; font-weight: bold;');
+console.log('%cSite built with HTML/CSS/JS • Focus: M365, Intune, ServiceNow, Networking', 'color: #666; font-size: 14px;');
