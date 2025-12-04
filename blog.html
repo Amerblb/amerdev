@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Amer</title>
+
+    <title>Blog - Amer Blboheath</title>
+    <meta name="description" content="Read cybersecurity, IT support, automation, networking, and privacy-focused blog posts by Amer Blboheath.">
+    <meta name="keywords" content="Amer Blboheath Blog, Cybersecurity Blog, IT Support Blog, Networking Blog, Automation Blog, PowerShell, OpenWrt, Intune, ServiceNow">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
         <div class="container">
             <div class="nav-brand">AMER</div>
             <ul class="nav-menu">
@@ -20,71 +26,76 @@
                 <li><a href="blog.html" class="nav-link active">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <button class="hamburger">
+
+            <!-- Accessibility Fix -->
+            <button class="hamburger" aria-label="Open navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+
         </div>
     </nav>
 
     <!-- Blog Section -->
-    <section class="page-section">
+    <section class="page-section" aria-label="Blog section">
         <div class="container">
             <h1 class="section-title">Blog</h1>
             
             <div class="blog-grid">
-                <article class="blog-card">
+
+                <article class="blog-card" aria-label="Blog post about building a cybersecurity lab">
                     <div class="blog-date">October 10, 2024</div>
                     <h2>Building a Personal Cybersecurity Lab</h2>
                     <p>Step-by-step overview of how I built my ethical hacking and monitoring lab using Kali Linux, Parrot OS, and Raspberry Pi 5. Covers safe network isolation, packet analysis, and Wi-Fi testing with Pwnagotchi.</p>
                     <a href="#" class="read-more">Read More →</a>
                 </article>
                 
-                <article class="blog-card">
+                <article class="blog-card" aria-label="Blog post about automating IT tasks with PowerShell">
                     <div class="blog-date">September 25, 2024</div>
                     <h2>Automating IT Support Tasks with PowerShell</h2>
                     <p>How I use PowerShell scripts to automate user onboarding, troubleshoot common system issues, and streamline helpdesk operations across Windows and Intune environments.</p>
                     <a href="#" class="read-more">Read More →</a>
                 </article>
                 
-                <article class="blog-card">
+                <article class="blog-card" aria-label="Blog post about home network security">
                     <div class="blog-date">September 1, 2024</div>
                     <h2>Network Security at Home: OpenWrt and AdGuard DNS</h2>
                     <p>Exploring how I configured my home router for better privacy and performance using OpenWrt firmware, Mullvad VPN, and AdGuard DNS to block trackers and malicious domains.</p>
                     <a href="#" class="read-more">Read More →</a>
                 </article>
                 
-                <article class="blog-card">
+                <article class="blog-card" aria-label="Blog post about transitioning from IT support to cybersecurity">
                     <div class="blog-date">August 15, 2024</div>
                     <h2>From IT Support to Cybersecurity: My Learning Journey</h2>
                     <p>Documenting my transition from traditional IT support to advanced cybersecurity practices. Includes NPower Canada training insights, certification prep, and real-world lab experience.</p>
                     <a href="#" class="read-more">Read More →</a>
                 </article>
                 
-                <article class="blog-card">
+                <article class="blog-card" aria-label="Blog post about Wi-Fi security testing with Pwnagotchi">
                     <div class="blog-date">August 2, 2024</div>
                     <h2>Wi-Fi Security Testing with Pwnagotchi</h2>
                     <p>An inside look at how I customized Pwnagotchi on Raspberry Pi Zero 2 W for ethical research, WPA handshake analysis, and AI-based packet optimization in controlled environments.</p>
                     <a href="#" class="read-more">Read More →</a>
                 </article>
                 
-                <article class="blog-card">
+                <article class="blog-card" aria-label="Blog post about mastering ServiceNow and ITIL">
                     <div class="blog-date">July 10, 2024</div>
                     <h2>Mastering ServiceNow and ITIL Practices</h2>
                     <p>Sharing tips from hands-on experience using ServiceNow to manage incidents, requests, and change workflows while following ITIL principles for enterprise service management.</p>
                     <a href="#" class="read-more">Read More →</a>
                 </article>
+
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Amer. All rights reserved.</p>
+            <p>&copy; 2025 Amer Blboheath. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

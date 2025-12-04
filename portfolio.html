@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Amer</title>
+    
+    <title>Portfolio - Amer Blboheath</title>
+    <meta name="description" content="Explore IT, cybersecurity, networking, and automation projects completed by Amer Blboheath, including labs with Kali Linux, PowerShell automation, secure networks, Intune simulations, and Pwnagotchi research.">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
         <div class="container">
             <div class="nav-brand">AMER</div>
             <ul class="nav-menu">
@@ -20,7 +24,9 @@
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <button class="hamburger">
+
+            <!-- Accessibility Fix -->
+            <button class="hamburger" aria-label="Open navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -29,35 +35,38 @@
     </nav>
 
     <!-- Portfolio Section -->
-    <section class="page-section">
+    <section class="page-section" aria-label="Portfolio Projects">
         <div class="container">
             <h1 class="section-title">Portfolio</h1>
             
             <div class="portfolio-grid">
+
+                <!-- PROJECT 1 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <svg viewBox="0 0 400 300">
+                    <div class="portfolio-img" aria-label="Cybersecurity Lab Project image placeholder">
+                        <svg viewBox="0 0 400 300" aria-hidden="true" focusable="false">
                             <rect width="400" height="300" fill="#f0f0f0"/>
                             <text x="200" y="150" font-size="24" text-anchor="middle" fill="#333">Project 1</text>
                         </svg>
                     </div>
-                    <h3>Home Cybersecurity Lab</h3>
-                    <p>Designed and configured a dedicated home cybersecurity lab using Kali Linux, Parrot OS, and Raspberry Pi 5 to practice penetration testing, network monitoring, and ethical hacking techniques in a secure environment.</p>
+                    <h2>Home Cybersecurity Lab</h2>
+                    <p>Designed and configured a dedicated cybersecurity lab using Kali Linux, Parrot OS, and Raspberry Pi 5 to practice penetration testing, network monitoring, and ethical hacking techniques in a secure environment.</p>
                     <div class="tags">
                         <span class="tag">Snort</span>
                         <span class="tag">Aircrack-ng</span>
                         <span class="tag">OpenWrt</span>
                     </div>
                 </div>
-                
+
+                <!-- PROJECT 2 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <svg viewBox="0 0 400 300">
+                    <div class="portfolio-img" aria-label="Automation Scripts Project placeholder">
+                        <svg viewBox="0 0 400 300" aria-hidden="true" focusable="false">
                             <rect width="400" height="300" fill="#e0e0e0"/>
                             <text x="200" y="150" font-size="24" text-anchor="middle" fill="#333">Project 2</text>
                         </svg>
                     </div>
-                    <h3>IT Support Automation Scripts</h3>
+                    <h2>IT Support Automation Scripts</h2>
                     <p>Created PowerShell and Bash scripts to automate device setup, account provisioning, and diagnostic tasks for IT helpdesk operations—reducing manual workload and improving resolution speed.</p>
                     <div class="tags">
                         <span class="tag">PowerShell</span>
@@ -65,80 +74,85 @@
                         <span class="tag">Python</span>
                     </div>
                 </div>
-                
+
+                <!-- PROJECT 3 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <svg viewBox="0 0 400 300">
+                    <div class="portfolio-img" aria-label="Secure Network Configuration project placeholder">
+                        <svg viewBox="0 0 400 300" aria-hidden="true" focusable="false">
                             <rect width="400" height="300" fill="#f0f0f0"/>
                             <text x="200" y="150" font-size="24" text-anchor="middle" fill="#333">Project 3</text>
                         </svg>
                     </div>
-                    <h3>Secure Network Configuration</h3>
-                    <p>Built a multi-subnet network with VLAN segmentation and VPN integration using OpenWrt and AdGuard DNS. Implemented DNS filtering and firewall rules to enhance home network security and privacy.</p>
+                    <h2>Secure Network Configuration</h2>
+                    <p>Built a multi-subnet network with VLAN segmentation and VPN integration using OpenWrt and AdGuard DNS. Implemented DNS filtering and firewall rules to enhance privacy and network security.</p>
                     <div class="tags">
                         <span class="tag">VPN</span>
                         <span class="tag">AdGuard DNS</span>
                         <span class="tag">Firewall</span>
                     </div>
                 </div>
-                
+
+                <!-- PROJECT 4 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <svg viewBox="0 0 400 300">
+                    <div class="portfolio-img" aria-label="Enterprise Device Management Simulation placeholder">
+                        <svg viewBox="0 0 400 300" aria-hidden="true" focusable="false">
                             <rect width="400" height="300" fill="#e0e0e0"/>
                             <text x="200" y="150" font-size="24" text-anchor="middle" fill="#333">Project 4</text>
                         </svg>
                     </div>
-                    <h3>Enterprise Device Management Simulation</h3>
-                    <p>Simulated enterprise IT support scenarios using Intune, JAMF, and Active Directory for user management, endpoint configuration, and security policy enforcement across macOS and Windows systems.</p>
+                    <h2>Enterprise Device Management Simulation</h2>
+                    <p>Simulated large-scale IT support scenarios using Intune, JAMF, and Active Directory for user management, endpoint configuration, and security policy enforcement across macOS and Windows systems.</p>
                     <div class="tags">
                         <span class="tag">Intune</span>
                         <span class="tag">Active Directory</span>
                         <span class="tag">JAMF</span>
                     </div>
                 </div>
-                
+
+                <!-- PROJECT 5 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <svg viewBox="0 0 400 300">
+                    <div class="portfolio-img" aria-label="Pwnagotchi Wireless Research placeholder">
+                        <svg viewBox="0 0 400 300" aria-hidden="true" focusable="false">
                             <rect width="400" height="300" fill="#f0f0f0"/>
                             <text x="200" y="150" font-size="24" text-anchor="middle" fill="#333">Project 5</text>
                         </svg>
                     </div>
-                    <h3>Pwnagotchi Wireless Research</h3>
-                    <p>Configured and customized Pwnagotchi on Raspberry Pi Zero 2 W to analyze WPA handshakes and study wireless behavior for educational and ethical testing purposes within a controlled environment.</p>
+                    <h2>Pwnagotchi Wireless Research</h2>
+                    <p>Configured and customized Pwnagotchi on Raspberry Pi Zero 2 W to analyze WPA handshakes and study wireless behavior for ethical security research and controlled testing.</p>
                     <div class="tags">
                         <span class="tag">Pwnagotchi</span>
                         <span class="tag">Raspberry Pi</span>
                         <span class="tag">Wireshark</span>
                     </div>
                 </div>
-                
+
+                <!-- PROJECT 6 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <svg viewBox="0 0 400 300">
+                    <div class="portfolio-img" aria-label="IT Knowledge Base and AI Integration placeholder">
+                        <svg viewBox="0 0 400 300" aria-hidden="true" focusable="false">
                             <rect width="400" height="300" fill="#e0e0e0"/>
                             <text x="200" y="150" font-size="24" text-anchor="middle" fill="#333">Project 6</text>
                         </svg>
                     </div>
-                    <h3>IT Knowledge Base & AI Integration</h3>
-                    <p>Developed a personal knowledge base using Markdown and integrated AI tools to assist with troubleshooting, ticket triage, and IT documentation management for faster response and learning.</p>
+                    <h2>IT Knowledge Base & AI Integration</h2>
+                    <p>Developed a personal knowledge base using Markdown and integrated AI tools to assist with troubleshooting, ticket triage, and documentation workflows.</p>
                     <div class="tags">
                         <span class="tag">ServiceNow</span>
                         <span class="tag">Markdown</span>
                         <span class="tag">AI</span>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Amer. All rights reserved.</p>
+            <p>&copy; 2025 Amer Blboheath. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

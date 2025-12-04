@@ -11,7 +11,7 @@
     <!-- Keywords -->
     <meta name="keywords" content="Amer Blboheath, About Amer, IT Helpdesk Analyst, Cybersecurity Professional, IT Support, Technical Support, Healthcare IT, Microsoft 365, Intune, ServiceNow, macOS Admin, Windows Admin, Networking, DNS, DHCP, VPN">
 
-    <!-- Open Graph (LinkedIn, Facebook, WhatsApp) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="About Amer Blboheath – IT Helpdesk Analyst & Cybersecurity Professional">
     <meta property="og:description" content="Explore Amer Blboheath’s professional background in IT support, cybersecurity, Microsoft 365, endpoint management, and healthcare technology.">
     <meta property="og:type" content="website">
@@ -27,7 +27,7 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://amerblb.github.io/amerdev/about.html">
 
-    <!-- Schema Markup for Google Knowledge Ranking -->
+    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -46,10 +46,11 @@
 
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
         <div class="container">
             <div class="nav-brand">AMER</div>
             <ul class="nav-menu">
@@ -61,34 +62,41 @@
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <button class="hamburger">
+
+            <!-- Accessibility Fix: Added aria-label -->
+            <button class="hamburger" aria-label="Open navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+
         </div>
     </nav>
 
     <!-- About Section -->
-    <section class="page-section">
+    <section class="page-section" aria-label="About Me section">
         <div class="container">
             <h1 class="section-title">About Me</h1>
             
             <div class="about-content">
                 <div class="about-image">
                     <div class="placeholder-image">
-                        <svg viewBox="0 0 200 200">
+
+                        <!-- Accessibility Fix: Added aria-label -->
+                        <svg viewBox="0 0 200 200" aria-label="Profile placeholder graphic">
                             <circle cx="100" cy="100" r="80" fill="#f0f0f0"/>
                             <text x="100" y="120" font-size="60" text-anchor="middle" fill="#333">A</text>
                         </svg>
+
                     </div>
                 </div>
                 
                 <div class="about-text">
                     <h2>IT Helpdesk Analyst & Healthcare Technology Specialist</h2>
+
                     <p>I provide reliable, human-centered IT support for enterprise environments. Over 8+ years, I’ve supported large user bases across Windows, macOS, and Linux—owning onboarding/offboarding, executive support, and daily incident/request handling through ITSM platforms. My focus is keeping people productive and systems secure across healthcare and high-stakes operations.</p>
 
-                    <p>I work across the Microsoft 365 ecosystem (Exchange Online, SharePoint, Teams, OneDrive), endpoint management with Intune and basic JAMF, identity with Active Directory, and the networking fundamentals that keep everything communicating (TCP/IP, DNS, DHCP, VPN, firewalls). I document thoroughly, automate where it helps (PowerShell, Bash, Python), and collaborate closely with Infrastructure and Security teams to deliver long-term, stable solutions—not quick temporary fixes.</p>
+                    <p>I work across the Microsoft 365 ecosystem (Exchange Online, SharePoint, Teams, OneDrive), endpoint management with Intune and basic JAMF, identity with Active Directory, and networking fundamentals (TCP/IP, DNS, DHCP, VPN, firewalls). I document thoroughly, automate where it helps (PowerShell, Bash, Python), and collaborate with Infrastructure and Security teams to deliver long-term stable solutions—not temporary fixes.</p>
                     
                     <h3>Skills & Expertise</h3>
                     <div class="skills-grid">
@@ -100,6 +108,7 @@
                         <div class="skill-item"><span>AV & Room Tech (Teams, Zoom, Crestron)</span></div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -110,6 +119,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
