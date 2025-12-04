@@ -125,6 +125,12 @@ img {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+
+    /* Accessibility: ensure tap target >= 48x48px */
+    min-width: 48px;
+    min-height: 48px;
+    justify-content: center;
+    align-items: center;
 }
 
 .hamburger span {
@@ -835,4 +841,3 @@ img {
         grid-template-columns: 1fr;
     }
 }
-
