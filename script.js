@@ -35,16 +35,18 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===========================
 // Smooth Scroll
 // ===========================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
   });
 });
 
@@ -96,8 +98,8 @@ if (contactForm) {
 // Active Navigation Link
 // ===========================
 const currentPage = window.location.pathname.split('/').pop();
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
+const navigationLinks = document.querySelectorAll('.nav-link'); // FIXED: Renamed to avoid conflict
+navigationLinks.forEach(link => {
   const linkHref = link.getAttribute('href');
   if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
     link.classList.add('active');
@@ -198,21 +200,16 @@ const downloadResumeBtn = document.querySelector('.download-resume .btn');
 if (downloadResumeBtn) {
   downloadResumeBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    window.open('Amer-Blboheath-Resume.pdf', '_blank'); // 🔹 make sure this file exists in your project root
+    // FIXED: Changed filename to match actual file with spaces
+    window.open('Amer Blboheath Resume.pdf', '_blank');
   });
 }
 
 // ===========================
-// Social Links Handler (fixed)
+// Social Links Handler - REMOVED
 // ===========================
-const socialLinks = document.querySelectorAll('.social-link');
-socialLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault(); // stop page reload
-    const url = this.getAttribute('href');
-    if (url) window.open(url, '_blank', 'noopener'); // open in new tab
-  });
-});
+// REMOVED: Social links already have target="_blank" in HTML
+// No need for JavaScript intervention
 
 // ===========================
 // Console Message
