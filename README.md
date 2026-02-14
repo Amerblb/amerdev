@@ -1,122 +1,194 @@
-# Amer - Personal Portfolio Website
+# Amer Blboheath - Personal Portfolio Website
 
-A modern, clean, and professional personal website built with HTML, CSS, and JavaScript.
+A modern, professional portfolio website for IT Helpdesk Analyst & Cybersecurity Professional, built with pure HTML, CSS, and JavaScript.
 
-## Features
+## 🚀 Features
 
-- **Modern Design**: Clean black and white aesthetic with IT vibe
-- **Fully Responsive**: Works perfectly on all device sizes (desktop, tablet, mobile)
-- **Easy to Modify**: Modular structure with separate HTML files for each section
-- **Fast & Lightweight**: Pure HTML/CSS/JS with no dependencies
-- **Professional Layout**: Well-organized sections for portfolio, resume, blog, and more
+### Design & UI
+- **Modern Aesthetic**: Clean design with black, white, and blue accent colors
+- **Professional Typography**: Space Grotesk for headings, Inter for body text
+- **Fully Responsive**: Seamless experience across desktop, tablet, and mobile devices
+- **Smooth Animations**: Hover effects, transitions, and interactive elements
+- **Accessibility**: ARIA labels, semantic HTML, skip-to-content links
 
-## Structure
+### Pages & Sections
+- **Home**: Hero section with typing animation and social links
+- **About**: Personal background, skills, and professional overview
+- **Portfolio**: Showcases technical projects and achievements
+- **Resume**: Detailed work experience and professional skills
+- **Education**: Timeline of certifications and training (with zoom hover effects)
+- **Blog**: Technical insights and professional learning journey
+- **Contact**: Functional contact form with Formspree integration
+
+### Technical Features
+- **SEO Optimized**: Meta tags, Open Graph, Twitter Cards, and Schema.org markup
+- **Contact Form**: Integrated with Formspree for email submissions
+- **Google Fonts**: Space Grotesk and Inter loaded via CDN
+- **Mobile Menu**: Responsive hamburger navigation
+- **Form Validation**: Client-side validation for contact form
+- **Clean Footer**: Copyright information without extra navigation
+- **Timeline UI**: Interactive education timeline with hover zoom effects
+
+## 📁 Structure
 
 ```
 /
-├── index.html       # Home page
-├── about.html       # About me section
-├── portfolio.html   # Portfolio projects
-├── resume.html      # Professional resume
-├── education.html   # Education and certifications
-├── blog.html        # Blog posts
-├── contact.html     # Contact form
-├── styles.css       # All styles in one file
-├── script.js        # All JavaScript in one file
-└── README.md        # This file
+├── index.html             # Home page with hero and quick links
+├── about.html             # About me section
+├── portfolio.html         # Portfolio projects showcase
+├── resume.html            # Professional resume and work history
+├── education.html         # Education timeline with certifications
+├── blog.html              # Blog posts and articles
+├── contact.html           # Contact form (Formspree integration)
+├── styles.css             # Complete stylesheet with CSS variables
+├── script.js              # Interactive features and animations
+├── Amer Blboheath Resume.pdf  # Downloadable resume
+└── README.md              # Documentation (this file)
 ```
 
-## Getting Started
+## 🎨 Design System
 
-1. Open `index.html` in your web browser
-2. No installation or build process required
-3. All files are ready to use
+### Color Palette
+```css
+--primary-color: #000000;      /* Black */
+--secondary-color: #ffffff;    /* White */
+--accent-color: #0066ff;       /* Blue */
+--accent-hover: #0052cc;       /* Darker Blue */
+--accent-light: #e6f0ff;       /* Light Blue */
+--text-primary: #1a1a1a;       /* Dark Gray */
+--text-light: #666666;         /* Medium Gray */
+--border-color: #e0e0e0;       /* Light Gray */
+--background-light: #f9f9f9;   /* Off White */
+```
 
-## Customization Guide
+### Typography
+- **Headings**: Space Grotesk (400, 600, 700)
+- **Body**: Inter (300, 400, 600)
+- **System Fallbacks**: -apple-system, BlinkMacSystemFont, sans-serif
 
-### Changing Content
+### Shadows
+- Small: `0 2px 8px rgba(0, 0, 0, 0.06)`
+- Medium: `0 4px 16px rgba(0, 0, 0, 0.08)`
+- Large: `0 8px 32px rgba(0, 0, 0, 0.12)`
+- Accent: `0 8px 24px rgba(0, 102, 255, 0.15)`
 
-Each section is in its own HTML file, making it easy to edit:
+## 🛠️ Customization Guide
 
-- **Home Page** (`index.html`): Edit the hero section and quick links
-- **About** (`about.html`): Update personal information and skills
-- **Portfolio** (`portfolio.html`): Add your projects and descriptions
-- **Resume** (`resume.html`): Update work experience and skills
-- **Education** (`education.html`): Modify education and certifications
-- **Blog** (`blog.html`): Add your blog posts
-- **Contact** (`contact.html`): Update contact information
+### Update Personal Information
 
-### Modifying Styles
+1. **Contact Details** (`contact.html`):
+   - Phone number, email, location
+   - Social media links (LinkedIn, GitHub)
 
-All styles are in `styles.css`. Key sections to customize:
+2. **Hero Section** (`index.html`):
+   - Update typing animation text
+   - Modify hero subtitle
 
-- **Colors**: Modify the CSS variables at the top of `styles.css`
-- **Fonts**: Change the `font-family` in the body selector
-- **Layouts**: Adjust grid and flex properties for different layouts
-- **Responsive**: Modify media queries to change breakpoints
+3. **About Page** (`about.html`):
+   - Edit bio and professional overview
+   - Update skills and expertise
 
-### Changing JavaScript
+### Modify Colors
 
-Interactive features are in `script.js`:
+Edit CSS variables in `styles.css`:
+```css
+:root {
+    --accent-color: #0066ff;  /* Change to your brand color */
+    --accent-hover: #0052cc;  /* Darker shade */
+}
+```
 
-- Mobile menu toggle
-- Form validation
-- Smooth scrolling
-- Scroll animations
-- Typing animation text
+### Customize Fonts
 
-### Adding Images
+Update Google Fonts link in HTML files and CSS variables:
+```css
+--font-heading: 'Your Font', sans-serif;
+--font-body: 'Your Body Font', sans-serif;
+```
 
-Replace placeholder SVGs with your actual images:
+### Add Projects/Portfolio Items
 
-1. Add your images to an `images/` folder
-2. Update the `<img>` or `<svg>` tags with proper paths
-3. Maintain aspect ratios for best results
+Edit `portfolio.html` to add new projects:
+```html
+<div class="portfolio-card">
+    <h3>Project Name</h3>
+    <p>Description...</p>
+</div>
+```
 
-## Color Scheme
+### Update Contact Form
 
-The website uses a strict black and white color palette:
+The contact form uses Formspree. To use your own:
+1. Sign up at [Formspree.io](https://formspree.io)
+2. Replace the form action URL in `contact.html`:
+```html
+<form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+```
 
-- **Primary**: `#000000` (Black)
-- **Secondary**: `#ffffff` (White)
-- **Accent**: `#666666` (Gray for text)
-- **Background**: `#f9f9f9` (Light gray)
+## 📱 Responsive Breakpoints
 
-## Responsive Breakpoints
+- **Desktop**: 1024px and above
+- **Tablet**: 768px - 1023px
+- **Mobile**: 640px - 767px  
+- **Small Mobile**: Below 640px
 
-- Desktop: 1024px and above
-- Tablet: 768px - 1023px
-- Mobile: 640px - 767px
-- Small Mobile: Below 640px
+## ⚙️ JavaScript Features
 
-## Browser Support
+The `script.js` file includes:
+- Mobile hamburger menu toggle
+- Smooth scroll behavior
+- Typing animation for hero section
+- Form validation and submission
+- Scroll-triggered animations
+- Mobile menu close on navigation
 
-Compatible with all modern browsers:
+## 🌐 Browser Support
+
+Fully compatible with:
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
-## Future Enhancements
+## 🚀 Getting Started
 
-Consider adding:
+1. **Clone the repository**:
+```bash
+git clone https://github.com/Amerblb/amerdev.git
+```
 
-- Backend integration for contact form
-- CMS for blog posts
-- Analytics tracking
-- SEO optimization
-- Social media integration
-- Light/dark mode toggle
+2. **Open in browser**:
+   - Simply open `index.html` in your web browser
+   - No build process or dependencies required
 
-## License
+3. **Customize**:
+   - Update personal information in HTML files
+   - Modify colors in `styles.css`
+   - Add your projects and content
+
+## 📋 Recent Updates
+
+- ✅ Removed timeline vertical line in education section
+- ✅ Added smooth zoom hover effect on education timeline circles
+- ✅ Cleaned up footer (removed redundant navigation)
+- ✅ Aligned "Let's Connect" and "Get in Touch" headings on contact page
+- ✅ Improved responsive design and mobile experience
+- ✅ Enhanced accessibility with ARIA labels
+
+## 📄 License
 
 Free to use and modify for personal or commercial projects.
 
-## Contact
+## 📞 Contact
 
-For questions or suggestions, feel free to reach out!
+**Amer Blboheath**  
+IT Helpdesk Analyst & Cybersecurity Professional
+
+- 📧 Email: Blboheath@outlook.com
+- 💼 LinkedIn: [linkedin.com/in/amerblboheath](https://www.linkedin.com/in/amerblboheath/)
+- 🐙 GitHub: [github.com/Amerblb](https://github.com/Amerblb)
+- 📍 Location: Toronto, Ontario
 
 ---
 
-Built with ❤️ using modern web technologies.
-
+Built with ❤️ using HTML, CSS, and JavaScript
