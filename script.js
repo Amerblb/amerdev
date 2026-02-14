@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormValidation();
     initActiveNavLinks();
     initAnimateOnScroll();
+    updateCopyrightYear();
 });
 
 // ===========================
@@ -24,12 +25,19 @@ function initMobileNav() {
         // Toggle menu
         hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
             
             // Prevent body scroll when menu is open
             if (navMenu.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
+                // Focus first menu item for keyboard users
+                const firstLink = navMenu.querySelector('.nav-link');
+                if (firstLink) {
+                    setTimeout(() => firstLink.focus(), 100);
+                }
             } else {
                 document.body.style.overflow = '';
             }
@@ -39,6 +47,7 @@ function initMobileNav() {
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
+                hamburger.setAttribute('aria-expanded', 'false');
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = '';
@@ -48,6 +57,7 @@ function initMobileNav() {
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             if (!event.target.closest('.navbar')) {
+                hamburger.setAttribute('aria-expanded', 'false');
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = '';
@@ -112,6 +122,9 @@ function initTypingAnimation() {
     const typingElement = document.querySelector('.typing-text');
     
     if (!typingElement) return;
+    
+    // Start with empty text
+    typingElement.textContent = '';
     
     function type() {
         const currentText = typingTexts[currentTextIndex];
@@ -186,8 +199,18 @@ function initFormValidation() {
     
     if (!contactForm) return;
     
+    let lastSubmitTime = 0;
+    const RATE_LIMIT_MS = 3000; // 3 seconds between submissions
+    
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+        
+        // Rate limiting check
+        const now = Date.now();
+        if (now - lastSubmitTime < RATE_LIMIT_MS) {
+            showFormMessage('⏱️ Please wait a moment before submitting again.', 'error');
+            return;
+        }
         
         const formData = new FormData(contactForm);
         const name = formData.get('name');
@@ -212,6 +235,8 @@ function initFormValidation() {
         const originalText = submitBtn.textContent;
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
+        contactForm.style.opacity = '0.6';
+        contactForm.style.pointerEvents = 'none';
         
         try {
             const response = await fetch(contactForm.action, {
@@ -223,6 +248,7 @@ function initFormValidation() {
             if (response.ok) {
                 showFormMessage('✅ Thanks! Your message has been sent successfully.', 'success');
                 contactForm.reset();
+                lastSubmitTime = Date.now();
             } else {
                 showFormMessage('⚠️ Something went wrong. Please try again later.', 'error');
             }
@@ -231,6 +257,8 @@ function initFormValidation() {
         } finally {
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;
+            contactForm.style.opacity = '1';
+            contactForm.style.pointerEvents = 'auto';
         }
     });
     
@@ -339,42 +367,13 @@ document.addEventListener('keydown', function(e) {
         const navMenu = document.querySelector('.nav-menu');
         
         if (hamburger && navMenu && navMenu.classList.contains('active')) {
+            hamburger.setAttribute('aria-expanded', 'false');
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.style.overflow = '';
         }
     }
 });
-
-// ===========================
-// Card Tilt Effect (Optional Enhancement)
-// ===========================
-function initCardTilt() {
-    const cards = document.querySelectorAll('.portfolio-item, .blog-card, .link-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mousemove', function(e) {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            card.style.transform = '';
-        });
-    });
-}
-
-// Uncomment to enable card tilt effect
-// initCardTilt();
 
 // ===========================
 // Performance: Lazy Load Images
@@ -417,4 +416,15 @@ if ('serviceWorker' in navigator) {
     // navigator.serviceWorker.register('/sw.js')
     //     .then(reg => console.log('Service Worker registered'))
     //     .catch(err => console.log('Service Worker registration failed'));
+}
+
+// ===========================
+// Dynamic Copyright Year
+// ===========================
+function updateCopyrightYear() {
+    const currentYear = new Date().getFullYear();
+    const footerTexts = document.querySelectorAll('.footer p');
+    footerTexts.forEach(footer => {
+        footer.innerHTML = `&copy; ${currentYear} Amer Blboheath. All rights reserved.`;
+    });
 }

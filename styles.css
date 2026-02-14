@@ -3,9 +3,6 @@
    Modern, Professional, Accessible
    =========================== */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;600&display=swap');
-
 /* ===========================
    Global Styles & Reset
    =========================== */
@@ -75,6 +72,15 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* Prevent unwanted hover effects on headings */
+h1, h2, h3, h4, h5, h6 {
+    cursor: default;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    color: inherit;
 }
 
 /* ===========================
@@ -177,8 +183,8 @@ img {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    min-width: 48px;
-    min-height: 48px;
+    min-width: 56px;
+    min-height: 56px;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
@@ -660,6 +666,16 @@ img {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: var(--accent-color);
+    cursor: default;
+}
+
+.resume-section h2::before,
+.resume-section h2::after {
+    display: none !important;
+}
+
+.resume-section h2:hover {
+    color: var(--accent-color);
 }
 
 .resume-item {
@@ -669,16 +685,7 @@ img {
     position: relative;
 }
 
-.resume-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 0;
-    background: var(--accent-color);
-    transition: height 0.3s;
-}
+
 
 .resume-item:hover::before {
     height: 100%;
@@ -749,6 +756,16 @@ img {
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: var(--primary-color);
+    cursor: default;
+}
+
+.skills-category h3::before,
+.skills-category h3::after {
+    display: none !important;
+}
+
+.skills-category h3:hover {
     color: var(--primary-color);
 }
 
@@ -1098,8 +1115,17 @@ img {
 }
 
 .footer p {
-    color: var(--text-light);
+    color: #555555;
     font-size: 0.9rem;
+}
+
+.footer a {
+    color: #555555;
+    transition: var(--transition-base);
+}
+
+.footer a:hover {
+    color: var(--accent-color);
 }
 
 /* ===========================
@@ -1128,6 +1154,11 @@ img {
 .scroll-top:hover {
     background: var(--accent-hover);
     transform: translateY(-4px);
+}
+
+.scroll-top:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 /* ===========================
@@ -1215,6 +1246,13 @@ img {
     .resume-header {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+@media (max-width: 640px) and (orientation: landscape) {
+    .hero {
+        min-height: 50vh;
+        padding: 3rem 0;
     }
 }
 
